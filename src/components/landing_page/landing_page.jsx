@@ -6,6 +6,8 @@ import Ellipse1 from "../../images/Ellipse31.svg";
 import Ellipse2 from "../../images/Ellipse2.svg";
 import Volbuilding from "../../images/vol-building2.svg";
 import ReqBuilding from "../../images/req-building.svg";
+import Cupboard from "../../images/cupboard.svg";
+import Mail from "../../images/mail.svg";
 
 const MainContainer = styled.div`
   display: flex;
@@ -18,9 +20,10 @@ const TopContainer = styled.div`
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(46, 72, 87, 0.18);
+  padding-left: 4%;
   background-image: url(${WhiteBuildings}), url(${Ellipse1}), url(${Ellipse2});
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: right, top left, top left;
+  background-position: right bottom, top left, top left;
 `;
 
 const MainHeading = styled.h2`
@@ -33,7 +36,7 @@ const MainHeading = styled.h2`
 const MidContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 2%;
 `;
 
@@ -41,18 +44,20 @@ const VolunteerContainer = styled.div`
   width: 45%;
   box-shadow: 0px 4px 10px rgba(46, 72, 87, 0.18);
   border-radius: 8px;
-  background-image: url(${Ellipse1}),url(${Ellipse2}),url(${Volbuilding});
-  background-repeat: no-repeat,no-repeat,no-repeat;
-  background-position: top left, top left , right;
+  background-image: url(${Ellipse1}), url(${Ellipse2}), url(${Volbuilding});
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: top left, top left, right bottom;
+  padding-left: 4%;
 `;
 
 const RequirementContainer = styled.div`
   width: 45%;
   box-shadow: 0px 4px 10px rgba(46, 72, 87, 0.18);
   border-radius: 8px;
-  background-image: url(${Ellipse1}),url(${Ellipse2}),url(${ReqBuilding});
-  background-repeat: no-repeat,no-repeat,no-repeat;
-  background-position: top left, top left,right;
+  background-image: url(${Ellipse1}), url(${Ellipse2}), url(${ReqBuilding});
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: top left, top left, right bottom;
+  padding-left: 4%;
 `;
 
 const DynamicContainer = styled.div`
@@ -61,17 +66,17 @@ const DynamicContainer = styled.div`
 `;
 
 const ShortlistContainer = styled.div`
-  border: solid 1px red;
-  width: 60%;
+  width: 55%;
+  margin-right: 4%;
 `;
 
 const NotificationContainer = styled.div`
-  border: solid 1px red;
+ 
   width: 40%;
 `;
 
 const Button = styled.button`
-  background-image: linear-gradient(180deg, #FFB81C , #F0A500 );
+  background-image: linear-gradient(180deg, #ffb81c, #f0a500);
   border-radius: 50px;
 `;
 
@@ -81,7 +86,9 @@ export default function landing_page() {
       <Navbar />
       <MainContainer>
         <TopContainer className="top-container">
-          <p style={{ color: "black", display: "block" }}>Welcome, John Doe</p>
+          <p style={{ color: "black", display: "block", marginTop: "4%" }}>
+            Welcome, John Doe
+          </p>
 
           <div
             style={{
@@ -91,12 +98,12 @@ export default function landing_page() {
               margin: "1% 10%",
             }}
           >
-            <MainHeading style={{ display: "inline-block" }}>
+            <MainHeading
+              style={{ display: "inline-block", marginLeft: "-13%" }}
+            >
               Let's find your <b>Accommodation</b>
             </MainHeading>
-            <Button
-              className="btn"
-              >
+            <Button className="btn" style={{ height: "fit-content" }}>
               See Available Accomodation
             </Button>
           </div>
@@ -111,10 +118,11 @@ export default function landing_page() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems: "center",
+                alignItems: "flex-start",
+                marginBottom: "6%",
               }}
             >
-              <p style={{ color: "black" }}>
+              <p style={{ color: "black", marginTop: "9%" }}>
                 Help each other finding an accommodation <br />
                 Participation is appreciated and is completely voluntary, with
                 emphasis on privacy and security of an individual.
@@ -128,21 +136,61 @@ export default function landing_page() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems: "center",
+                alignItems: "flex-start",
               }}
             >
-              <p style={{ color: "black" }}>
+              <p style={{ color: "black", marginTop: "9%" }}>
                 Find Your Accommodation is an online platform for CGI Community
                 Post your requirement .
               </p>
-              <Button className="btn">Post your Requirement</Button>
+              <Button className="btn" style={{ marginTop: "3%" }}>
+                Post your Requirement
+              </Button>
             </div>
           </RequirementContainer>
         </MidContainer>
         <DynamicContainer>
-          <ShortlistContainer>This is Shorlist Container</ShortlistContainer>
+          <ShortlistContainer>
+            <p style={{ color: "black" }}>Shortlisted By You</p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "8px",
+                boxShadow: "0px 4px 10px rgba(66, 76, 97, 0.15)",
+                borderRadius: "8px",
+              }}
+            >
+              <img src={Cupboard}></img>
+              <p style={{ color: "black" }}>
+                You don't have any shortlisting yet!
+              </p>
+              <p style={{ color: "black" }}>
+                Take your time to find the perfect accommodation your ideal
+                space is just a few clicks away.
+              </p>
+            </div>
+          </ShortlistContainer>
           <NotificationContainer>
-            This is NotificationContainer
+            <p style={{ color: "black" }}>Notification</p>
+            <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "8px",
+                boxShadow: "0px 4px 10px rgba(66, 76, 97, 0.15)",
+                borderRadius: "8px",
+              }}>
+              <img src={Mail} />
+              <p style={{ color: "black" }}>No Notifications Right Now!</p>
+              <p style={{ color: "black" }}>
+                We'll notify you when something arrives.
+              </p>
+            </div>
           </NotificationContainer>
         </DynamicContainer>
       </MainContainer>

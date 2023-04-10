@@ -67,12 +67,12 @@ function Login() {
         </LeftContainer>}
         <RightContainer
           className="col-12 col-sm-6 right-container "
-          style={{ boxShadow: "0px 4px 10px rgba(46, 72, 87, 0.18)" }}
+          style={{ boxShadow: "0px 4px 10px rgba(46, 72, 87, 0.18)" ,padding:"0 4%"}}
         >
           <div className="row" style={{padding:"0 4%"}} >
             <div className="col-12 text-center mb-4 mt-5">
               <img className="img-fluid" src={cglogo} />
-              <h4 className="main-heading mt-3">
+              <h4 className="main-heading mt-3" style={{fontSize:"20px"}}>
                 Let's Find Your Accommodation
               </h4>
             </div>
@@ -116,4 +116,4 @@ function Login() {
   );
 }
 
-export default Login;
+export {Login,RightContainer};
